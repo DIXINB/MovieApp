@@ -1,12 +1,21 @@
 ##Task
-We create 2D objects analytically and save in a dxf file (d26.dxf).
-The meaning of execution in obtaining a list of necessary objects for a particular case
-Iterating then this list, we call the available functions. With each execution, an object is added to our drawing
-##Execution idea
-We must choose shapes from the following list: circle, ellipse, polyline with 6 points. 2 shapes from connected rectangles (bl1, bl2) are also available. bl1 has an already defined hole in the center. We set the parameters of two rectangles in bl2 ourselves from the command line.  
-So, first we list all the forms on the command line. Then, in response to requests, enter the form parameters in the same place. 
-##Idea for development
-Improve the code by creating blocks from more complex shapes 
-This project is licensed by MIT.
+This RESTful movie list management API is implemented in Python 3.7.
+The record has the following fields: id, title, year, director, length, rating.
+The following functionality has been implemented:
+methods GET, POST, PUT, DELETE;
+checking the value of the field year <2100;
+the existence of a filled title field;
+an error is processed when trying to DELETE a missing record.
 
+##Operating procedure 
+1. Create a database using SQL Shell (psql).
+2. We create environment variables FLASK_CONFIG and, for example, DEV_DATABASE_URL for development mode 
+\movie-App> set FLASK_CONFIG = “config.DevelopmentConfig” 
+\movie-App> set DEV_DATABASE_URL = 'postgresql: // user: PASSWORD @ localhost / dbname'. 
+3. Run the local server:
+ \movie-App> manage.py runserver.
+4. We make a request for a record with number 3:
+\movie-App> http GET http://127.0.0.1:5000/api/v1.0/movies/3.
+
+© Vadim Stetsenko 2020
 
