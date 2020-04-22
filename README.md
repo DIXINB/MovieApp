@@ -9,13 +9,12 @@ an error is processed when trying to DELETE a missing record.
 
 ##Operating procedure 
 1. Create a database using SQL Shell (psql).
-2. We create environment variables FLASK_CONFIG and, for example, DEV_DATABASE_URL for development mode 
-\movie-App> set FLASK_CONFIG = “config.DevelopmentConfig” 
-\movie-App> set DEV_DATABASE_URL = 'postgresql: // user: PASSWORD @ localhost / dbname'. 
+2. We create environment variables  DEV_DATABASE_URL for development mode 
+\movie-App4> set DEV_DATABASE_URL = postgresql: // user: PASSWORD @ localhost:5432 / dbname. 
 3. Run the local server:
- \movie-App> manage.py runserver.
+ \movie-App4> manage.py runserver.
 4. We make a request for a record with number 3:
-\movie-App> http GET http://127.0.0.1:5000/api/v1.0/movies/3.
+\movie-App4> http GET http://127.0.0.1:5000/api/v1.0/movies/3.
 
 © Vadim Stetsenko 2020
 
